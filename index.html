@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="author: jonathanlobo">
 
-    <title>Jonathan Lobo</title>
+    <title>PII Collector</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -14,7 +14,7 @@
   <body>
 
     <div class="form">
-      <h3 id="formTitle">Personally Identifiable Information Collector</h3>
+      <h1 id="formTitle">Personally Identifiable Information Collector</h1>
       <form>
         <label for="name">Name</label>
         <input type="text" id="name">
@@ -188,6 +188,7 @@
             <option value="1905">1905</option>
             <option value="1904">1904</option>
             <option value="1903">1903</option>
+            <option value="1902">1902</option>
             <option value="1901">1901</option>
             <option value="1900">1900</option>
           </select>
@@ -195,11 +196,11 @@
 
         <br>
 
-        <div>
-          <label>Gender</label>
+        <div class="radio-buttons">
+          <label class="padding">Gender: </label>
+          <input type="radio" name="gender" value="Male" checked>Male</input>
+          <input type="radio" name="gender" value="Female">Female</input>
           <br>
-          <input type="radio" name="gender" value="Male" checked> Male<br>
-          <input type="radio" name="gender" value="Female"> Female<br>
         </div>
 
         <br>
@@ -208,9 +209,9 @@
           <label for="ssn">SSN</label>
           <label id="ccLabel" for="ccn">Credit Card Number</label>
           <br>
-          <input type="text" id="ssn" placeholder="XXX-XX-XXXX" maxlength="11">
+          <input type="text" name="ssn" id="ssn" placeholder="XXX-XX-XXXX" maxlength="11">
 
-          <input type="text" id="ccn" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
+          <input type="text" name="ccn" id="ccn" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
         </div>
 
         <div class="button">
@@ -223,6 +224,7 @@
       <p id="copyright">&copy; Jonathan Lobo, 2016</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/coolstuff.js"></script>
 
   </body>

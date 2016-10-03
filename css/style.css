@@ -62,7 +62,6 @@ input[type=submit]:hover {
 
 #formTitle {
   text-align: center;
-  font-size: 150%;
 }
 
 #ssn {
@@ -73,12 +72,17 @@ input[type=submit]:hover {
 }
 
 #ccn {
-  width: 45%;
+  width: 50%;
   text-align: center;
 }
 
 #ccLabel {
-  margin-left: 365px;
+  float: right;
+  margin-right: 20px;
+}
+
+.padding {
+  margin-right: 10px;
 }
 
 .input {
