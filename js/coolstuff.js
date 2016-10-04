@@ -8,14 +8,14 @@ $(document).ready(function(){
     $("#errorText1").hide();
     $("#errorText2").hide();
     $("#errorText3").hide();
-    validate();
-    // if (validate()) {
-    //   $("#formDiv").hide();
-    //   $("#confirmDiv").show();
-    // }
+    //validate();
+    if (validate()) {
+      $("#formDiv").hide();
+      $("#confirmDiv").show();
+    }
   });
 
-function validate() {
+  function validate() {
     var userName = document.forms["form"]["name"].value;
 
     var month = $("#month option:selected").text();
@@ -28,7 +28,7 @@ function validate() {
 
     var ccNumber = document.forms["form"]["ccn"].value;
 
-    var ccReg = /^\d{4}-\d{4}-\d{4}-\d{4}$|^\d{16}$/
+    var ccReg = /^\d{4}-\d{4}-\d{4}-\d{4}$|^\d{16}$/;
     var ssnReg1 = /^\d{3}$/;
     var ssnReg2 = /^\d{2}$/;
     var ssnReg3 = /^\d{4}$/;
@@ -40,19 +40,25 @@ function validate() {
       $("#errorText1").show();
       ret = false;
     }
+
     if (!ccReg.test(ccNumber)) {
       $("#errorText2").show();
       ret = false;
     }
+
     if (!ssnReg1.test(ssn1) || !ssnReg2.test(ssn2) || !ssnReg3.test(ssn3)) {
       $("#errorText3").show();
       ret = false;
     }
 
-    if (ret == true) {
-      $("#formDiv").hide();
-      $("#confirmDiv").show();
-    }
+    alert(ret);
+
+    // if (ret == true) {
+    //   $("#formDiv").hide();
+    //   $("#confirmDiv").show();
+    // }
+
+    return ret;
   }
 
 });
