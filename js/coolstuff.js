@@ -4,14 +4,15 @@ $(document).ready(function(){
   $("#errorText3").hide();
   $("#confirmDiv").hide();
 
-  $("#submitButton").click(function(){
-    if (validate() == true) {
-      $("#errorText1").hide();
-      $("#errorText2").hide();
-      $("#errorText3").hide();
-      $(".form-div").hide();
-      $("#confirmDiv").show();
-    }
+  $(document).on('click', '#submitButton', function(){
+    $("#errorText1").hide();
+    $("#errorText2").hide();
+    $("#errorText3").hide();
+    validate();
+    // if (validate()) {
+    //   $("#formDiv").hide();
+    //   $("#confirmDiv").show();
+    // }
   });
 
 function validate() {
@@ -48,16 +49,10 @@ function validate() {
       ret = false;
     }
 
-    return ret;
+    if (ret == true) {
+      $("#formDiv").hide();
+      $("#confirmDiv").show();
+    }
   }
 
-/*
-function submit() {
-  var name = document.getElementByName("name").value;
-  if (validate()) // Calling validation function
-  {
-      alert("Form Submitted Successfully!");
-      //Name : " + name + " \n Email : " + email + " \n Form Name : " + document.getElementById("form_id").getAttribute("name") +
-  }
-   */
 });

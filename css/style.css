@@ -37,7 +37,7 @@ input[type=button]:hover {
   text-align: center;
 }
 
-.form-div {
+#formDiv {
     border: 4px solid #3949AB;
     border-radius: 5px;
     background-color: #bbdefb;
