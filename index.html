@@ -15,13 +15,16 @@
 
     <div class="form-div">
       <h1 id="formTitle">Personally Identifiable Information Collector</h1>
+      <h4 id="errorText1" class="center error">Please fill in all fields!</h3>
+      <h4 id="errorText2" class="center error">Invalid Credit Card Number!</h3>
+      <h4 id="errorText3" class="center error">Invalid SSN!</h3>
       <form name="form">
         <label for="name">Name</label>
         <input type="text" id="name">
 
         <br>
 
-        <div>
+        <div name=dob>
           <label>Date of Birth</label>
           <br>
           <select name="month" id="month">
@@ -198,7 +201,7 @@
 
         <div>
           <label class="padding">Gender: </label>
-          <input type="radio" name="gender" value="Male">Male</input>
+          <input type="radio" name="gender" value="Male" checked>Male</input>
           <input type="radio" name="gender" value="Female">Female</input>
           <br>
         </div>
@@ -209,19 +212,27 @@
           <label for="ssn">SSN</label>
           <label id="ccLabel" for="ccn">Credit Card Number</label>
           <br>
-          <input type="text" name="ssn" id="ssn" placeholder="XXX-XX-XXXX" maxlength="11">
+          <input type="text" name="ssn1" id="ssn1" placeholder="XXX" maxlength="3"> <p class=float-left>&mdash;</p>
+          <input type="text" name="ssn2" id="ssn2" placeholder="XX" maxlength="2"> <p class=float-left>&mdash;</p>
+          <input type="text" name="ssn3" id="ssn3" placeholder="XXXX" maxlength="4">
 
           <input type="text" name="ccn" id="ccn" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
         </div>
 
-        <div class="button">
-          <input type="submit" value="Submit" onclick="submit()">
+        <br>
+
+        <div class="button-div">
+          <input type="button" id="submitButton" name="submitButton" value="Submit">
         </div>
       </form>
     </div>
 
+    <div id="confirmDiv" class="confirm-container">
+      <h1 class="center">Congratulations! Your identity has been stolen!</h1>
+    </div>
+
     <footer>
-      <p id="copyright">&copy; Jonathan Lobo, 2016</p>
+      <p class="center" id="copyright">&copy; Jonathan Lobo, 2016</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
