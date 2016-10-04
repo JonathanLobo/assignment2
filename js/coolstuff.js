@@ -8,7 +8,7 @@ $(document).ready(function(){
     $("#errorText1").hide();
     $("#errorText2").hide();
     $("#errorText3").hide();
-    //validate();
+
     if (validate()) {
       $("#formDiv").hide();
       $("#confirmDiv").show();
@@ -36,7 +36,7 @@ $(document).ready(function(){
     var ret = true;
 
     if (userName === '' || month === 'Month' || month === '-----' || day === 'Day' || day === '---' || year === 'Year' || year === '----'
-      || ssn === '' || ccNumber === '') {
+      || ssn1 === '' || ssn2 === '' || ssn3 === '' || ccNumber === '') {
       $("#errorText1").show();
       ret = false;
     }
@@ -50,13 +50,6 @@ $(document).ready(function(){
       $("#errorText3").show();
       ret = false;
     }
-
-    alert(ret);
-
-    // if (ret == true) {
-    //   $("#formDiv").hide();
-    //   $("#confirmDiv").show();
-    // }
 
     return ret;
   }
